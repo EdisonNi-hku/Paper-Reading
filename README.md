@@ -4,10 +4,18 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 - [Transfer Learning and Multi-task Learning](#transfer-learning-and-MTL)
     - [Adapter Based Models](#adapter-based-models)
     - [Other models](#other-models)
+    - [MTL Analysis](#mtl-analysis)
 - [NLP in Finance](#nlp-in-finance)
-- [Numbers in NLP](#number-and-numeracy)
-    - [Models](#models)
+    - [Financial NLP Models](#financial-nlp-models)
     - [Financial NLP Tasks](#financial-nlp-tasks)
+- [Numbers in NLP](#number-and-numeracy)
+    - [Number Representation](#number-representation)
+    - [Numeracy](#numeracy)
+- [Relation Extraction](#relation-extraction)
+- [Semantic Role Labeling](#semantic-role-labeling)
+- [Dependency Parsing](#dependency-parsing)
+- [Domain Adaptation](#domain-adaptation)
+- [Transformers Interpretation](#transformers-interpretation)
 - [NLP in Programming Language](#nlp-in-programming-language)
 
 
@@ -35,7 +43,7 @@ across NLP tasks". EMNLP(2020) [[PDF]](https://aclanthology.org/2020.emnlp-main.
 
 
 ## NLP in Finance
-### Models
+### Financial NLP Models
 * **General FinBERT**: "FinBERT: A Pretrained Language Model for Financial Communications". 2020 [[PDF]](https://arxiv.org/abs/2006.08097)
 * **FSA investigation**: "Financial Sentiment Analysis: An Investigation into Common Mistakes and Silver Bullets". CoLing(2020) [[PDF]](https://aclanthology.org/2020.coling-main.85.pdf): In the FSA domain, interpretability is essential. Also proposed common errors/difficulties in FSA, one numeracy related is about external information.
 * **Sentiment FinBERT**: "FinBERT: Financial Sentiment Analysis with Pre-trained Language Models" 2019 [[PDF]](https://arxiv.org/abs/1908.10063)
