@@ -18,7 +18,6 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 - [Transformers Interpretation](#transformers-interpretation)
 - [NLP in Programming Language](#nlp-in-programming-language)
 
-
 ## Transfer Learning and MTL
 ### Adapter Based Models
 * **Hyperformer**: "Parameter-efficient Multi-task Fine-tuning for Transformers via Shared Hypernetworks". ACL(2021) [[PDF]](https://arxiv.org/pdf/2106.04489.pdf): leveraging hyper-network and task embedding for positive knowledge transfer between different tasks. Model architecture based on Houlsby Adapter.
@@ -58,6 +57,7 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 * **NumberClassification**: "Overview of the NTCIR-14 FinNum Task: Fine-Grained Numeral Understanding in Financial Social Media Data". 2019 [[PDF]](https://www.cs.nccu.edu.tw/~hhhuang/docs/ntcir2019.pdf)
 * **SemEval**: "SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News". SemEval(2017) [[PDF]](https://aclanthology.org/S17-2089/)
 * **TAP**: "Textual Analogy Parsing: What's Shared and What's Compared among Analogous Facts". EMNLP(2018) [[PDF]](https://arxiv.org/abs/1809.02700)
+* **FiQA Sentiment Analysis and QA** [[Official Site]](https://sites.google.com/view/fiqa/)
 * **Financial Phrase Bank**: "Good Debt or Bad Debt: Detecting Semantic Orientations in Economic Texts". 2013 [[PDF]](https://arxiv.org/abs/1307.5336)
 
 
@@ -78,6 +78,14 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 * **BERT Calculator**: "Giving BERT a Calculator: Finding Operations and Arguments with Reading Comprehension". EMNLP(2019) [[PDF]](https://aclanthology.org/D19-1609/)
 * **Numeracy-600K**: "Numeracy-600K: Learning Numeracy for Detecting Exaggerated Information in Market Comments". ACL(2019) [[PDF]](https://aclanthology.org/P19-1635/)
 * **DROP**: "DROP: A Reading Comprehension Benchmark Requiring Discrete Reasoning Over Paragraphs". NAACL(2019) [[PDF]](https://aclanthology.org/N19-1246/)
+
+### Number In Finance Datasets
+#### Arithmetic Word Problems
+* **MathQA**: "MathQA: Towards Interpretable Math Word Problem Solving with Operation-Based Formalisms". NAACL(2019) [[PDF]](https://aclanthology.org/N19-1245/)
+* **AquA**: "Program Induction by Rationale Generation : Learning to Solve and Explain Algebraic Word Problems". ACL(2017) [[PDF]](https://arxiv.org/abs/1705.04146)
+#### Commonsense
+* **Numbergame**: "Towards Question Format Independent Numerical Reasoning: A Set of Prerequisite Tasks". 2020 [[PDF]](https://arxiv.org/abs/2005.08516)
+* **NumerSense**: "Birds have four legs?! NumerSense: Probing Numerical Commonsense Knowledge of Pre-Trained Language Models". EMNLP(2020)[[PDF]](https://aclanthology.org/2020.emnlp-main.557/)
 
 
 ## Relation Extraction
@@ -116,3 +124,6 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 * **GraphCodeBERT**: "GraphCodeBERT: Pre-training Code Representations with Data Flow". ICLR(2021) [[PDF]](https://arxiv.org/abs/2009.08366): leverage the power of code structure(data flow). Some variables are not named after naming convention, therefore, data flow provides semantic information of the variables. Two new pre-training objectives: edge prediction and node alignment.
 * **CodeXGLUE**: "CodeXGLUE: A Machine Learning Benchmark Dataset for Code Understanding and Generation". [[PDF]](https://arxiv.org/abs/2102.04664): contains a wide range of code-code, code-text, text-code, and text-text tasks. Three baselines: CodeBERT, CodeBERT + Decoder, CodeGPT.
 * **CodeBERT**: "CodeBERT: A Pre-Trained Model for Programming and Natural Languages". EMNLP-Findings(2020) [[PDF]](https://arxiv.org/abs/2002.08155): treat code and natural language as multi-modal data. Pre-training CodeBERT using two objectives: Masked Language Modeling(MLM) and Replaced Token Detection(RTD).
+
+## Data-to-text Generation
+* **PlanGen**: "Plan-then-Generate: Controlled Data-to-Text Generation via Planning". EMNLP(2021) [[PDF]](https://arxiv.org/abs/2108.13740)
