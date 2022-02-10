@@ -79,7 +79,7 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 * **Numeracy-600K**: "Numeracy-600K: Learning Numeracy for Detecting Exaggerated Information in Market Comments". ACL(2019) [[PDF]](https://aclanthology.org/P19-1635/)
 * **DROP**: "DROP: A Reading Comprehension Benchmark Requiring Discrete Reasoning Over Paragraphs". NAACL(2019) [[PDF]](https://aclanthology.org/N19-1246/)
 
-### Number In Finance Datasets
+### Number in NLP Datasets
 #### Arithmetic Word Problems
 * **MathQA**: "MathQA: Towards Interpretable Math Word Problem Solving with Operation-Based Formalisms". NAACL(2019) [[PDF]](https://aclanthology.org/N19-1245/)
 * **AquA**: "Program Induction by Rationale Generation : Learning to Solve and Explain Algebraic Word Problems". ACL(2017) [[PDF]](https://arxiv.org/abs/1705.04146)
