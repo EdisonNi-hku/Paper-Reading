@@ -116,14 +116,20 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 
 
 ## NLP in Programming Language
+* **UniXcoder**: "Unified Cross-Modal Pre-training for Code Representation" ACL(2022) [[PDF]](https://arxiv.org/abs/2203.03850)
 * **NeuralNetworkSolvesMath**: "A Neural Network Solves and Generates Mathematics Problems by Program Synthesis: Calculus, Differential Equations, Linear Algebra, and More". 2021 [[PDF]](https://arxiv.org/abs/2112.15594): Rephrasing the mathematics problems to programming tasks in a way that Codex can generate python code to solve them. An interesting application of PL language models.
+* **CodeT5**: "CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation". EMNLP(2021) [[PDF]](https://arxiv.org/abs/2109.00859): Another NL-PL based T5 model. Objectives: Masked Span prediction(auto-regressing) + Identifier prediction + Identifier Tagging + bimodal dual gnenration. MTL benefits code summarization and code refinement the most. The MTL system selects the best checkpoint for each task(like original T5).
 * **SYNCoBERT**: "SynCoBERT: Syntax-Guided Multi-Modal Contrastive Pre-Training for Code Representation". 2021 [[PDF]](https://arxiv.org/abs/2108.04556): Triple modals: Natural Language, Programming Language, and Abstract Syntax Tree. Two new self-supervised objectives: identifier prediction and AST edge prediction, along with multi-modal contrastive training objective.
 * **Codex**: "Evaluating Large Language Models Trained on Code". ACL(2021) [[PDF]](https://arxiv.org/abs/2107.03374): an NL-PL specific GPT. An interesting metric: Generate code samples and see whether the samples pass the unit tests.
+* **TreeBERT**: "TreeBERT: A Tree-Based Pre-Trained Model for Programming Language". UAI(2021) [[PDF]](https://arxiv.org/abs/2105.12485): focusing on extracting syntactic and semantic information from AST
 * **CoTexT**: "CoTexT: Multi-task Learning with Code-Text Transformer". ACL(2021) [[PDF]](https://arxiv.org/abs/2105.08645): an NL-PL domain specific version of T5, converting all tasks into a text-to-text format. Best Models are pretrained on C4 + CodeSearchNet(why best?). Multi-task: MT fine-tuning on 6 Programming languages.
-* **CodeT5**: "CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation". EMNLP(2021) [[PDF]](https://arxiv.org/abs/2109.00859): Another NL-PL based T5 model. Objectives: Masked Span prediction(auto-regressing) + Identifier prediction + Identifier Tagging + bimodal dual gnenration. MTL benefits code summarization and code refinement the most. The MTL system selects the best checkpoint for each task(like original T5).
+* **PLBART**: "Unified Pre-training for Program Understanding and Generation". NAACL(2021) [[PDF]](Unified Pre-training for Program Understanding and Generation)
 * **GraphCodeBERT**: "GraphCodeBERT: Pre-training Code Representations with Data Flow". ICLR(2021) [[PDF]](https://arxiv.org/abs/2009.08366): leverage the power of code structure(data flow). Some variables are not named after naming convention, therefore, data flow provides semantic information of the variables. Two new pre-training objectives: edge prediction and node alignment.
 * **CodeXGLUE**: "CodeXGLUE: A Machine Learning Benchmark Dataset for Code Understanding and Generation". [[PDF]](https://arxiv.org/abs/2102.04664): contains a wide range of code-code, code-text, text-code, and text-text tasks. Three baselines: CodeBERT, CodeBERT + Decoder, CodeGPT.
 * **CodeBERT**: "CodeBERT: A Pre-Trained Model for Programming and Natural Languages". EMNLP-Findings(2020) [[PDF]](https://arxiv.org/abs/2002.08155): treat code and natural language as multi-modal data. Pre-training CodeBERT using two objectives: Masked Language Modeling(MLM) and Replaced Token Detection(RTD).
 
 ## Data-to-text Generation
 * **PlanGen**: "Plan-then-Generate: Controlled Data-to-Text Generation via Planning". EMNLP(2021) [[PDF]](https://arxiv.org/abs/2108.13740)
+
+## Curriculum Learning
+* **CL4NLU**: "Curriculum Learning for Natural Language Understanding". ACL(2020) [[PDF]](https://aclanthology.org/2020.acl-main.542/)
