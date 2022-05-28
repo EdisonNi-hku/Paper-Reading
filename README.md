@@ -33,6 +33,8 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 * **PALs**: "BERT and PALs: Projected Attention Layers for Efficient Adaptation in Multi-Task Learning". ICML(2019) [[PDF]](http://proceedings.mlr.press/v97/stickland19a.html): MTL systems with shared BERT and task specific adapter layers, adapter layers include Houlsby Adapter and Parallel Attention Layers.
 * **Task Hierachy**: "A Joint Many-Task Model: Growing a Neural Network for Multiple NLP Tasks". EMNLP(2017) [[PDF]](https://arxiv.org/abs/1611.01587): layers of tasks: POS -> Chunking -> Dependency parsing -> Semantic relatedness -> Entailment: input of each layer consists of label embeddings of all the previous layers and the hidden state of the previous layer.
 ### MTL Analysis
+* **MetaWeighting**: "MetaWeighting: Learning to Weight Tasks in Multi-Task Learning" ACL Findings(2022) [[PDF]](https://aclanthology.org/2022.findings-acl.271/)
+* **MTL v.s. IFT**: "When to Use Multi-Task Learning vs Intermediate Fine-Tuning for Pre-Trained Encoder Transfer Learning" ACL(2022) [[PDF]](https://arxiv.org/abs/2205.08124)
 * **Task Gradients**: "Efficiently Identifying Task Groupings for Multi-Task Learning". NeurIPS spotlight(2021) [[PDF]](https://arxiv.org/abs/2109.04617)
 * **Non-target Head**: "What's in Your Head? Emergent Behaviour in Multi-Task Transformer Models". EMNLP(2021) [[PDF]](https://arxiv.org/abs/2104.06129)
 * **Ranking Transfer Languages**: "Ranking Transfer Languages with Pragmatically-Motivated Features for Multilingual Sentiment Analysis". EACL(2021) [[PDF]](https://arxiv.org/abs/2006.09336)
@@ -40,6 +42,11 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 * **Task Embeddings**: "Exploring and predicting transferability
 across NLP tasks". EMNLP(2020) [[PDF]](https://aclanthology.org/2020.emnlp-main.635)
 
+### MTL Gradients
+* **Gradient Vaccine**: "Investigating and Improving Multi-task Optimization in Massively Multilingual Models" ICLR(2021) [[PDF]](https://arxiv.org/abs/2010.05874)
+* **Impartial MTL**: "Towards Impartial Multi-task Learning" ICLR(2021) [[PDF]](https://openreview.net/forum?id=IMPnRXEWpvr)
+* **Pick a Sign**: "Just Pick a Sign: Optimizing Deep Multitask Models
+with Gradient Sign Dropout" NeurIPS(2020) [[PDF]](https://arxiv.org/pdf/2010.06808.pdf)
 
 ## NLP in Finance
 ### Financial NLP Models
