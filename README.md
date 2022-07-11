@@ -1,6 +1,7 @@
 # Paper-Reading
 Paper reading list in natural language processing (NLP), with special emphasis on **Finance+NLP** and relevant topics. This repo will keep updating 🤗 ...
 
+- [Claim Verification](#claim-verification)
 - [Transfer Learning and Multi-task Learning](#transfer-learning-and-MTL)
     - [Adapter Based Models](#adapter-based-models)
     - [Other models](#other-models)
@@ -18,12 +19,28 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 - [Transformers Interpretation](#transformers-interpretation)
 - [NLP in Programming Language](#nlp-in-programming-language)
 
+## Claim Verification
+### Data Collection
+* **Presidential Debates**: "Detecting Check-worthy Factual Claims in
+Presidential Debates" (2015) [[URL]](https://dl.acm.org/doi/10.1145/2806416.2806652): whether a sentence is "non-factual", "unimportant factual", and "check-worthy factual". Data collection process: debate transcripts -> filter sentences from president candidates -> discard short sentences -> Use a data collection website to annotate -> 140 annotators -> using screening sentences to select high-quality annotators.
+* **ClaimBuster**: "A Benchmark Dataset of Check-Worthy Factual Claims" AAAI(2020) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/7346/7200): Also on the domain of presidiential debates. Compared with previous work, it reduced bias, and improved time-period of data. Similar transcripts processing. Use 40 labeled sentences to train annotators, as well as on-site training workshops. Use screening sentences to detect labeling quality. Monetary rewards and score rank to encourage better annotation.
+* **Judicial Decisions**: "Automated fact-value distinction in court opinions" (2020) [[PDF]](https://link.springer.com/epdf/10.1007/s10657-020-09645-7?author_access_token=0lrxR5amL26ii9rbxOyRRve4RwlQNchNByi7wbcMAY4Rn4AGeJ9qqiUyLFGlSyn90_9MSB1ZXV1_BuuMOQ4sUXyeLq83OpD7B678nRCUDq6T2yW5EWuYBLhb4CC82O6D5dt5Bflo8nVd86wC0_EaFA%3D%3D): classification over fact statements(fact about the case) & value statements(principles applicable to the facts). Fact/opinion classification in law domain is different from other domain. Data was collected by parsing, using labels in the section headers.
+* **CheckThat!2019**: "Overview of the CLEF-2019 CheckThat! Lab: Automatic Identification and Verification of Claims. Task 1: Check-Worthiness" (2019) [[PDF]](http://ceur-ws.org/Vol-2380/paper_269.pdf): different from ClaimBuster, this work is based on annotations by a fact-checking organization: mark those claims whose factuality was challenged by the fact-checkers.
+* **CheckThat!2020**: "Overview of CheckThat! 2020: Automatic Identification and Verification of Claims in Social Media" (2020) [[PDF]](https://arxiv.org/pdf/2007.07997.pdf): claim verification pipeline in twitter. check-worthiness -> verified claim retrieval -> supporting evidence retrieval -> claim verification. Check-worthiness data collection: define 5 questions about check-worthiness. If the answers are all possitive th tweet is annotated to worth-checking. 2-5 annotators independently, then discuss disagreement.
+* **Covid Infodemic**: "Fighting the COVID-19 Infodemic: Modeling the Perspective of Journalists, Fact-Checkers, Social Media Platforms, Policy Makers, and the Society" EMNLP.Findings(Alam et al., 2021) [[PDF]](https://aclanthology.org/2021.findings-emnlp.56.pdf): three annotators per tweet. Resolve cases of disgreement in a consolidation discusion. Annotation instruction provided. The annotators are required to annotate 7 questions regarding a tweet. The questions help annotators to think more thoroughly, and provide comprehensive annotation.
+* **Covid Infodemic Annotation Platform**: "Fighting the COVID-19 Infodemic in Social Media:A Holistic Perspective and a Call to Arms". AAAI(Alam et al., 2021) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/18114/17917): crowd-sourcing annotation platform based on MicroMappers.
+
+### Others
+* **FRUIT**: "FRUIT: Faithfully Reflecting Updated Information in Text" (L. Logan IV., et al., 2021) [[PDF]](https://arxiv.org/abs/2112.08634)
+
 ## Transfer Learning and MTL
 ### Adapter Based Models
 * **Hyperformer**: "Parameter-efficient Multi-task Fine-tuning for Transformers via Shared Hypernetworks". ACL(2021) [[PDF]](https://arxiv.org/pdf/2106.04489.pdf): leveraging hyper-network and task embedding for positive knowledge transfer between different tasks. Model architecture based on Houlsby Adapter.
 * **Houlsby Adapter**: "Parameter-Efficient Transfer Learning for NLP". ICML(2019) [[PDF]](https://arxiv.org/abs/1902.00751): propose the method of freezing BERT parameters, only fine-tuning adapter layers, which generally preserves the BERT performance on GLUE.
 * **AdapterFusion**: "AdapterFusion: Non-Destructive Task Composition for Transfer Learning". EACL(2021) [[PDF]](https://arxiv.org/pdf/2005.00247): fine-tuning Adapter layers on difference tasks. Then fuse the adapter layers together for better performance on a target task.
 * **AdapterHub**: "AdapterHub: A Framework for Adapting Transformers". EMNLP(2020) [[PDF]](https://arxiv.org/abs/2007.07779)
+* **MAD-X**: "MAD-X: An Adapter-Based Framework for Multi-Task Cross-Lingual Transfer". EMNLP(Pfeiffer et al., 2020): Multi-lingual transfer by adapters.
+
 ### Other Models
 * **ExT5**: "ExT5: Towards Extreme Multi-Task Scaling for Transfer Learning". ICLR(2022) [[PDF]](https://arxiv.org/abs/2111.10952)
 * **FLAN**: "Finetuned Language Models are Zero-Shot Learners". 2021 [[PDF]](https://arxiv.org/abs/2109.01652)
@@ -80,6 +97,7 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 * **DigitCNN/RNN**: "Numeracy for Language Models: Evaluating and Improving their Ability to Predict Numbers" ACL(2018) [[PDF]](https://arxiv.org/abs/1805.08154)
 
 ### Numeracy
+* **Reasoning Aware**: "Improving the Numerical Reasoning Skills of Pretrained Language Models" EMNLP(2022)[[PDF]](https://arxiv.org/pdf/2205.06733.pdf)
 * **QDGAN**: "Question Directed Graph Attention Network for Numerical Reasoning over Text". EMNLP(2020) [[PDF]](https://arxiv.org/abs/2009.07448): numeray is highly related to the knowledge of number dependencies(e.g. what quantity is the number describing)
 * **Injecting Numeracy**: "Injecting Numerical Reasoning Skills into Language Models". ACL(2020) [[PDF]](https://aclanthology.org/2020.acl-main.89/)
 * **BERT Calculator**: "Giving BERT a Calculator: Finding Operations and Arguments with Reading Comprehension". EMNLP(2019) [[PDF]](https://aclanthology.org/D19-1609/)
