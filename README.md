@@ -30,6 +30,21 @@ Presidential Debates" (2015) [[URL]](https://dl.acm.org/doi/10.1145/2806416.2806
 * **Covid Infodemic**: "Fighting the COVID-19 Infodemic: Modeling the Perspective of Journalists, Fact-Checkers, Social Media Platforms, Policy Makers, and the Society" EMNLP.Findings(Alam et al., 2021) [[PDF]](https://aclanthology.org/2021.findings-emnlp.56.pdf): three annotators per tweet. Resolve cases of disgreement in a consolidation discusion. Annotation instruction provided. The annotators are required to annotate 7 questions regarding a tweet. The questions help annotators to think more thoroughly, and provide comprehensive annotation.
 * **Covid Infodemic Annotation Platform**: "Fighting the COVID-19 Infodemic in Social Media:A Holistic Perspective and a Call to Arms". AAAI(Alam et al., 2021) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/18114/17917): crowd-sourcing annotation platform based on MicroMappers.
 
+
+### Scientific Claim Verification
+* **ClaimGenBART**: "Generating Scientific Claims for Zero-Shot Scientific Fact Checking" (Wright et al., 2022 ACL) [[PDF]](https://arxiv.org/pdf/2203.12990.pdf)
+* **MultiVers**: "Improving scientific claim verification with weak supervision and full-document context" (Wadden et al., 2022 NAACL.findings) [[PDF]](https://arxiv.org/pdf/2112.01640.pdf): provided a nice summarization of background of SCV.
+* **ARSJoint**: "Abstract, Rationale, Stance: A Joint Model for Scientific Claim Verification" (Zhang et al., 2021 EMNLP) [[PDF]](https://aclanthology.org/2021.emnlp-main.290.pdf): Another joint approach dealing with error propagation in pipeline. Similar to ParagraphJoint, contextualize the entire abstract with claim. Use hierachical attention to compute sentence attentions/abstract attention. Information sharing/MTL joint training enabled by complicated prediction headers.
+* **ParagraphJoint**: "MULTIVERS: Improving scientific claim verification with weak supervision and full-document context" (Li et al., 2021 AAAI) [[PDF]](https://arxiv.org/pdf/2012.14500v1.pdf): joint train rationale selection, and stance prediction, which is different from the three-step pipeline. Does not outperform pipeline models. Benefit: encode full abstract(compact paragraph encoding) compared to "extract-then-label"
+* **VERT5ERINI**: "Scientific Claim Verification with VERT5ERINI" (Pradeep et al., 2021 EACL Workshop) [[PDF]](https://aclanthology.org/2021.louhi-1.11.pdf): a pipeline approach based on T5-3B. Use MS-MACRO dataset for pre-finetuning.
+* **SciFact**: "Fact or Fiction: Verifying Scientific Claims" (Wadden et al., 2020 EMNLP) [[PDF]](https://aclanthology.org/2020.emnlp-main.609.pdf)
+
+### Fact-check of Other domains
+* **KGAT**: "Fine-grained Fact Verification with Kernel Graph Attention Network" (Liu et al., 2020 ACL) [[PDF]](https://arxiv.org/pdf/1910.09796.pdf)
+* **GEAR**: "GEAR: Graph-based Evidence Aggregating and Reasoning for Fact Verification" (Zhou et al., 2019 ACL) [[PDF]](https://aclanthology.org/P19-1085.pdf)
+* **UKP Snopes**: "A richly annotated corpus for different tasks in automated factchecking" (Hanselowski et al., 2019 CoNLL)
+
+
 ### Others
 * **FRUIT**: "FRUIT: Faithfully Reflecting Updated Information in Text" (L. Logan IV., et al., 2021) [[PDF]](https://arxiv.org/abs/2112.08634)
 
