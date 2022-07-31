@@ -4,8 +4,9 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 - [Claim Verification](#claim-verification)
     - [Scientific Claim Verification](#scientific-claim-verification)
     - [Fact-check of Other domain](#fact-check-of-othergeneral-domains)
-    - [Data Collection](#data-collection)
+    - [Checkworthiness](#checkworthinessclaim-detection)
 - [Transfer Learning and Multi-task Learning](#transfer-learning-and-MTL)
+    - [Domain Adaptation](#domain-adaptation)
     - [Adapter Based Models](#adapter-based-models)
     - [Other models](#other-models)
     - [MTL Analysis](#mtl-analysis)
@@ -18,7 +19,6 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 - [Relation Extraction](#relation-extraction)
 - [Semantic Role Labeling](#semantic-role-labeling)
 - [Dependency Parsing](#dependency-parsing)
-- [Domain Adaptation](#domain-adaptation)
 - [Transformers Interpretation](#transformers-interpretation)
 - [NLP in Programming Language](#nlp-in-programming-language)
 
@@ -26,7 +26,7 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 
 ### Scientific Claim Verification
 * **ClaimGenBART**: "Generating Scientific Claims for Zero-Shot Scientific Fact Checking" (Wright et al., 2022 ACL) [[PDF]](https://arxiv.org/pdf/2203.12990.pdf)
-* **MultiVers**: "Improving scientific claim verification with weak supervision and full-document context" (Wadden et al., 2022 NAACL.findings) [[PDF]](https://arxiv.org/pdf/2112.01640.pdf): provided a nice summarization of background of SCV.
+* **MultiVers**: "Improving scientific claim verification with weak supervision and full-document context" (Wadden et al., 2022 NAACL.findings) [[PDF]](https://arxiv.org/pdf/2112.01640.pdf): provided a nice summarization of background of SCV. Use Longformer to contextualize claim + abstarct sequence. Since rationale prediction is not necessary when predicting veracity, weakly supervised data can be utilized.
 * **ARSJoint**: "Abstract, Rationale, Stance: A Joint Model for Scientific Claim Verification" (Zhang et al., 2021 EMNLP) [[PDF]](https://aclanthology.org/2021.emnlp-main.290.pdf): Another joint approach dealing with error propagation in pipeline. Similar to ParagraphJoint, contextualize the entire abstract with claim. Use hierachical attention to compute sentence attentions/abstract attention. Information sharing/MTL joint training enabled by complicated prediction headers.
 * **ParagraphJoint**: "MULTIVERS: Improving scientific claim verification with weak supervision and full-document context" (Li et al., 2021 AAAI) [[PDF]](https://arxiv.org/pdf/2012.14500v1.pdf): joint train rationale selection, and stance prediction, which is different from the three-step pipeline. Does not outperform pipeline models. Benefit: encode full abstract(compact paragraph encoding) compared to "extract-then-label"
 * **VERT5ERINI**: "Scientific Claim Verification with VERT5ERINI" (Pradeep et al., 2021 EACL Workshop) [[PDF]](https://aclanthology.org/2021.louhi-1.11.pdf): a pipeline approach based on T5-3B. Use MS-MACRO dataset for pre-finetuning.
@@ -37,23 +37,43 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 * **KGAT**: "Fine-grained Fact Verification with Kernel Graph Attention Network" (Liu et al., 2020 ACL) [[PDF]](https://arxiv.org/pdf/1910.09796.pdf)
 * **GEAR**: "GEAR: Graph-based Evidence Aggregating and Reasoning for Fact Verification" (Zhou et al., 2019 ACL) [[PDF]](https://aclanthology.org/P19-1085.pdf)
 * **UKP Snopes**: "A richly annotated corpus for different tasks in automated factchecking" (Hanselowski et al., 2019 CoNLL)
+* **MultiFC**: "A Real-World Multi-Domain Dataset for Evidence-Based Fact Checking of Claims" (Augenstein et al., 2019 EMNLP) [[PDF]](https://aclanthology.org/D19-1475.pdf): multi-domain labeled claims crawled from fact-check websites. Evidences are retrieved from google search. Provided a summarization of previous datasets.
+* **FakeNewsNet**: "A Data Repository with News Content, Social Context and Spatiotemporal Information for Studying Fake News on Social Media" (Shu et al., 2018 AAAI) [[PDF]](https://arxiv.org/pdf/1809.01286.pdf): instead of verifying a news based on its content and external evidence, fake news detection relys on social, spacial, and temperal information.
+* **Emergent**: "Emergent: a novel data-set for stance classification
+" (Ferreira&Vlachos, 2016 NAACL) [[PDF]](https://aclanthology.org/N16-1138.pdf): claim verification on news article domain.
 
 
-### Data Collection
-* **Presidential Debates**: "Detecting Check-worthy Factual Claims in
-Presidential Debates" (2015) [[URL]](https://dl.acm.org/doi/10.1145/2806416.2806652): whether a sentence is "non-factual", "unimportant factual", and "check-worthy factual". Data collection process: debate transcripts -> filter sentences from president candidates -> discard short sentences -> Use a data collection website to annotate -> 140 annotators -> using screening sentences to select high-quality annotators.
-* **ClaimBuster**: "A Benchmark Dataset of Check-Worthy Factual Claims" AAAI(2020) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/7346/7200): Also on the domain of presidiential debates. Compared with previous work, it reduced bias, and improved time-period of data. Similar transcripts processing. Use 40 labeled sentences to train annotators, as well as on-site training workshops. Use screening sentences to detect labeling quality. Monetary rewards and score rank to encourage better annotation.
-* **Judicial Decisions**: "Automated fact-value distinction in court opinions" (2020) [[PDF]](https://link.springer.com/epdf/10.1007/s10657-020-09645-7?author_access_token=0lrxR5amL26ii9rbxOyRRve4RwlQNchNByi7wbcMAY4Rn4AGeJ9qqiUyLFGlSyn90_9MSB1ZXV1_BuuMOQ4sUXyeLq83OpD7B678nRCUDq6T2yW5EWuYBLhb4CC82O6D5dt5Bflo8nVd86wC0_EaFA%3D%3D): classification over fact statements(fact about the case) & value statements(principles applicable to the facts). Fact/opinion classification in law domain is different from other domain. Data was collected by parsing, using labels in the section headers.
-* **CheckThat!2019**: "Overview of the CLEF-2019 CheckThat! Lab: Automatic Identification and Verification of Claims. Task 1: Check-Worthiness" (2019) [[PDF]](http://ceur-ws.org/Vol-2380/paper_269.pdf): different from ClaimBuster, this work is based on annotations by a fact-checking organization: mark those claims whose factuality was challenged by the fact-checkers.
-* **CheckThat!2020**: "Overview of CheckThat! 2020: Automatic Identification and Verification of Claims in Social Media" (2020) [[PDF]](https://arxiv.org/pdf/2007.07997.pdf): claim verification pipeline in twitter. check-worthiness -> verified claim retrieval -> supporting evidence retrieval -> claim verification. Check-worthiness data collection: define 5 questions about check-worthiness. If the answers are all possitive th tweet is annotated to worth-checking. 2-5 annotators independently, then discuss disagreement.
+### Checkworthiness/Claim Detection
 * **Covid Infodemic**: "Fighting the COVID-19 Infodemic: Modeling the Perspective of Journalists, Fact-Checkers, Social Media Platforms, Policy Makers, and the Society" EMNLP.Findings(Alam et al., 2021) [[PDF]](https://aclanthology.org/2021.findings-emnlp.56.pdf): three annotators per tweet. Resolve cases of disgreement in a consolidation discusion. Annotation instruction provided. The annotators are required to annotate 7 questions regarding a tweet. The questions help annotators to think more thoroughly, and provide comprehensive annotation.
 * **Covid Infodemic Annotation Platform**: "Fighting the COVID-19 Infodemic in Social Media:A Holistic Perspective and a Call to Arms". AAAI(Alam et al., 2021) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/18114/17917): crowd-sourcing annotation platform based on MicroMappers.
+* **ClaimBuster**: "A Benchmark Dataset of Check-Worthy Factual Claims" (Arslan, Hassan et al., 2020 AAAI) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/7346/7200): Also on the domain of presidiential debates. Compared with previous work, it reduced bias, and improved time-period of data. Similar transcripts processing. Use 40 labeled sentences to train annotators, as well as on-site training workshops. Use screening sentences to detect labeling quality. Monetary rewards and score rank to encourage better annotation.
+* **Judicial Decisions**: "Automated fact-value distinction in court opinions" (Cao et al., 2020) [[PDF]](https://link.springer.com/epdf/10.1007/s10657-020-09645-7?author_access_token=0lrxR5amL26ii9rbxOyRRve4RwlQNchNByi7wbcMAY4Rn4AGeJ9qqiUyLFGlSyn90_9MSB1ZXV1_BuuMOQ4sUXyeLq83OpD7B678nRCUDq6T2yW5EWuYBLhb4CC82O6D5dt5Bflo8nVd86wC0_EaFA%3D%3D): classification over fact statements(fact about the case) & value statements(principles applicable to the facts). Fact/opinion classification in law domain is different from other domain. Data was collected by parsing, using labels in the section headers.
+* **CheckThat!2020**: "Overview of CheckThat! 2020: Automatic Identification and Verification of Claims in Social Media" (Barrón-Cedeño et al., 2020 CLEF) [[PDF]](https://arxiv.org/pdf/2007.07997.pdf): claim verification pipeline in twitter. check-worthiness -> verified claim retrieval -> supporting evidence retrieval -> claim verification. Check-worthiness data collection: define 5 questions about check-worthiness. If the answers are all possitive th tweet is annotated to worth-checking. 2-5 annotators independently, then discuss disagreement.
+* **CheckThat!2019**: "Overview of the CLEF-2019 CheckThat! Lab: Automatic Identification and Verification of Claims. Task 1: Check-Worthiness" (Atanasova, Nakov et al., 2019 CLEF) [[PDF]](http://ceur-ws.org/Vol-2380/paper_269.pdf): different from ClaimBuster, this work is based on annotations by a fact-checking organization: mark those claims whose factuality was challenged by the fact-checkers.
+* **Presidential Debates**: "Detecting Check-worthy Factual Claims in
+Presidential Debates" (Hassan et al., 2015 CIKM) [[PDF]](https://dl.acm.org/doi/10.1145/2806416.2806652): whether a sentence is "non-factual", "unimportant factual", and "check-worthy factual". Data collection process: debate transcripts -> filter sentences from president candidates -> discard short sentences -> Use a data collection website to annotate -> 140 annotators -> using screening sentences to select high-quality annotators.
+* **Annotation Schema**: "Developing an Annotation Schema and Benchmark for Consistent Automated Claim Detection" (Konstantinnovskiy et al., 2018) [[PDF]](https://arxiv.org/pdf/1809.08193.pdf): labels like worthy/not worthy are subjective. This work avoids judgement of "importance". They used prodigy as annotation platform.
 
+### Approaches for Claim Detection
+* **Context**: "A Context-Aware Approach for Detecting Worth-Checking Claims in Political Debates" (Gencheva&Nakov et al., 2017) [[PDF]](https://www.acl-bg.org/proceedings/2017/RANLP%202017/pdf/RANLP037.pdf): Feature engineering on content(sentiment, named entity, linguistic features e.t.c.), context(position, meta data, segment size e.t.c.), and their mixture(topic, discourse, contradiction e.t.c.). Both contextual and sentential features are important. Evaluated on ClaimRank.
+* **Weak Supervision**: "Neural check-worthiness ranking with weak supervision Finding sentences for fact-checking" (Casper et al., 2019 WWW) [[PDF]](https://curis.ku.dk/portal/files/223251765/p994_hansen.pdf): use ClaimBuster API add weakly-supervised data. Evaluated on CLEF 2018 and ClaimRank.
 
 ### Others
 * **FRUIT**: "FRUIT: Faithfully Reflecting Updated Information in Text" (L. Logan IV., et al., 2021) [[PDF]](https://arxiv.org/abs/2112.08634)
 
+## Data Augmentation
+* **EDA**: "Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks" (Wei&Zou, 2019 EMNLP) [[PDF]](https://aclanthology.org/D19-1670.pdf): simple augmentations like random swap, insertion, deletion, and replacement. Helpful for RNN, CNN models.
+* **Reinforcement+GAN**: "Learning to Compose Domain-Specific Transformations for Data Augmentation" (Ratner&Ehrenberg et al., 2017) [[PDF]](https://arxiv.org/pdf/1709.01643.pdf): an interesting assumption: transformation functions are likely to produce null class data instead of switching classes. Use GAN to train generators for "valid" transformation function sequences.
+* **Data Programming**: "Creating Large Training Sets, Quickly" (Ratner et al., 2016 NIPS) [[PDF]](https://proceedings.neurips.cc/paper/2016/file/6709e8d64a5f47269ed5cea9f625f7ab-Paper.pdf): engineer a number of labeling functions, train a classifier on that, use that classifier to label large amounts of unsupervised data, train a new classifier on that data.
+
 ## Transfer Learning and MTL
+
+### Domain Adaptation
+* **Cross-domain Knowledge Distillation**: "Matching Distributions between Model and Data: Cross-domain Knowledge Distillation for Unsupervised Domain Adaptation". ACL(2021) [[PDF]](https://aclanthology.org/2021.acl-long.421.pdf)
+* **UDALM**: "UDALM: Unsupervised Domain Adaptation through Language Modeling". NAACL(2019) [[PDF]](https://arxiv.org/abs/2104.07078): fine tuning on source domain labeled data while training a target domain MLM auxiliary task.
+* **Adversarial BERT**: "Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis" ACL(2020) [[PDF]](https://aclanthology.org/2020.acl-main.370/): injecting target domain & domain knowledge through post-training, then apply domain-adversarial learning.
+* **Domain Classification**: "Domain Adaptation with BERT-based Domain Classification and Data Selection". EMNLP(2019) [[PDF]](https://aclanthology.org/2020.acl-main.370/): use curriculum learning, defaults: only selects part of source domain data & need labeled target domain development set.
+
 ### Adapter Based Models
 * **Hyperformer**: "Parameter-efficient Multi-task Fine-tuning for Transformers via Shared Hypernetworks". ACL(2021) [[PDF]](https://arxiv.org/pdf/2106.04489.pdf): leveraging hyper-network and task embedding for positive knowledge transfer between different tasks. Model architecture based on Houlsby Adapter.
 * **Houlsby Adapter**: "Parameter-Efficient Transfer Learning for NLP". ICML(2019) [[PDF]](https://arxiv.org/abs/1902.00751): propose the method of freezing BERT parameters, only fine-tuning adapter layers, which generally preserves the BERT performance on GLUE.
@@ -146,13 +166,6 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 * **Trankit**: "Trankit: A Light-Weight Transformer-based Toolkit for Multilingual Natural Language Processing". EACL(2021) [[PDF]](https://aclanthology.org/2021.eacl-demos.10/)
 * **STEPS**: "Applying Occam's Razor to Transformer-Based Dependency Parsing: What Works, What Doesn't, and What is Really Necessary". IWPT(2021) [[PDF]](https://aclanthology.org/2021.iwpt-1.13/)
 * **UDify**: "75 Languages, 1 Model: Parsing Universal Dependencies Universally". EMNLP(2019) [[PDF]](https://aclanthology.org/D19-1279/)
-
-
-## Domain Adaptation
-* **Cross-domain Knowledge Distillation**: "Matching Distributions between Model and Data: Cross-domain Knowledge Distillation for Unsupervised Domain Adaptation". ACL(2021) [[PDF]](https://aclanthology.org/2021.acl-long.421.pdf)
-* **UDALM**: "UDALM: Unsupervised Domain Adaptation through Language Modeling". NAACL(2019) [[PDF]](https://arxiv.org/abs/2104.07078): fine tuning on source domain labeled data while training a target domain MLM auxiliary task.
-* **Adversarial BERT**: "Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis" ACL(2020) [[PDF]](https://aclanthology.org/2020.acl-main.370/): injecting target domain & domain knowledge through post-training, then apply domain-adversarial learning.
-* **Domain Classification**: "Domain Adaptation with BERT-based Domain Classification and Data Selection". EMNLP(2019) [[PDF]](https://aclanthology.org/2020.acl-main.370/): use curriculum learning, defaults: only selects part of source domain data & need labeled target domain development set.
 
 
 ## Transformers Interpretation
