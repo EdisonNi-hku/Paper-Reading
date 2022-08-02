@@ -22,6 +22,7 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 - [Transformers Interpretation](#transformers-interpretation)
 - [NLP in Programming Language](#nlp-in-programming-language)
 
+
 ## Claim Verification
 
 ### Scientific Claim Verification
@@ -62,19 +63,28 @@ Presidential Debates" (Hassan et al., 2015 CIKM) [[PDF]](https://dl.acm.org/doi/
 * **FRUIT**: "FRUIT: Faithfully Reflecting Updated Information in Text" (L. Logan IV., et al., 2021) [[PDF]](https://arxiv.org/abs/2112.08634)
 
 ## Data Augmentation
+* **TreeMix**: "TreeMix: Compositional Constituency-based Data Augmentation for Natural Language Understanding" (Zhang et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.385.pdf): TreeMix leverages constituency parsing tree to decompose sentences into constituent sub-structures and the Mixup data augmentation technique to recombine them to generate new sentences. 
+* **EPiDA**: "An Easy Plug-in Data Augmentation Framework for High Performance Text Classification" (Zhao et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.349.pdf): control quality(conditional entorpy minimization) and quantity(relative entropy maximization) simoutaneously. It is all about selection, and thus can be plugged into random DA algorithms(their experiments use EDA).
+* **TextSmoothing**: "Enhance Various Data Augmentation Methods on Text Classification Tasks" (Wu et al., 2022 ACL) [[PDF]](https://arxiv.org/pdf/2202.13840.pdf): with the masked language model prediction header, one-hot encodings of words are "smoothed". The words with high probabilty scores in the smoothed representation are likely to be nice replacements for the original word.
+* **Glitter**: "When Chosen Wisely, More Data Is What You Need: A Universal Sample-Efficient Strategy For Data Augmentation" (Kamalloo&Rezagholizadeh et al., 2022 ACL.Findings) [[PDF]](https://aclanthology.org/2022.findings-acl.84.pdf): a pluggin system similar to EPiDA.
+* **AEDA**: "An Easier Data Augmentation Technique for Text Classification" (Karimi et al., 2021 EMNLP.Findings) [[PDF]](https://arxiv.org/pdf/2108.13230.pdf): similar to EDA but only use random insertion.
 * **EDA**: "Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks" (Wei&Zou, 2019 EMNLP) [[PDF]](https://aclanthology.org/D19-1670.pdf): simple augmentations like random swap, insertion, deletion, and replacement. Helpful for RNN, CNN models.
+* **BackTranslation**: "QANet: Combining Local Convolution with Global Self-Attention for Reading Comprehension" (Yu et al., 2018 ICLR) [[PDF]](https://arxiv.org/abs/1804.09541?source=post_page---------------------------): back-translation preserves the texts' semantic meaning, thus can also be a type of data augmentation.
 * **Reinforcement+GAN**: "Learning to Compose Domain-Specific Transformations for Data Augmentation" (Ratner&Ehrenberg et al., 2017) [[PDF]](https://arxiv.org/pdf/1709.01643.pdf): an interesting assumption: transformation functions are likely to produce null class data instead of switching classes. Use GAN to train generators for "valid" transformation function sequences.
 * **Data Programming**: "Creating Large Training Sets, Quickly" (Ratner et al., 2016 NIPS) [[PDF]](https://proceedings.neurips.cc/paper/2016/file/6709e8d64a5f47269ed5cea9f625f7ab-Paper.pdf): engineer a number of labeling functions, train a classifier on that, use that classifier to label large amounts of unsupervised data, train a new classifier on that data.
 
 ## Transfer Learning and MTL
-
 ### Domain Adaptation
+* **DCCL**: "Domain Confused Contrastive Learning for Unsupervised Domain Adaptation". (Long et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.217.pdf): convert samples from different domains to "domain puzzles"(domain-confused sentences), and thus produce domain invariant representations. Methodology: learning domain classification with adversarial training. The learned adversarial attack is the "domain puzzle converter". Then use contrastive learning to push representation of domain puzzles and their original sentence closer. Only in-domain negative sampling is allowed.
 * **Cross-domain Knowledge Distillation**: "Matching Distributions between Model and Data: Cross-domain Knowledge Distillation for Unsupervised Domain Adaptation". ACL(2021) [[PDF]](https://aclanthology.org/2021.acl-long.421.pdf)
-* **UDALM**: "UDALM: Unsupervised Domain Adaptation through Language Modeling". NAACL(2019) [[PDF]](https://arxiv.org/abs/2104.07078): fine tuning on source domain labeled data while training a target domain MLM auxiliary task.
+* **UDALM**: "UDALM: Unsupervised Domain Adaptation through Language Modeling". (Karouzos et al., 2021 NAACL) [[PDF]](https://arxiv.org/abs/2104.07078): fine tuning on source domain labeled data while training a target domain MLM auxiliary task.
+* **Domain Cluster**: "Unsupervised Domain Clusters in Pretrained Language Models" (Aharoni&Goldberg, 2020 ACL) [[PDF]](https://aclanthology.org/2020.acl-main.692.pdf)
 * **Adversarial BERT**: "Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis" ACL(2020) [[PDF]](https://aclanthology.org/2020.acl-main.370/): injecting target domain & domain knowledge through post-training, then apply domain-adversarial learning.
 * **Domain Classification**: "Domain Adaptation with BERT-based Domain Classification and Data Selection". EMNLP(2019) [[PDF]](https://aclanthology.org/2020.acl-main.370/): use curriculum learning, defaults: only selects part of source domain data & need labeled target domain development set.
 
 ### Adapter Based Models
+* **DomainHierachy**: "Efficient Hierarchical Domain Adaptation
+for Pretrained Language Models" (Chronopoulou et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.96.pdf)
 * **Hyperformer**: "Parameter-efficient Multi-task Fine-tuning for Transformers via Shared Hypernetworks". ACL(2021) [[PDF]](https://arxiv.org/pdf/2106.04489.pdf): leveraging hyper-network and task embedding for positive knowledge transfer between different tasks. Model architecture based on Houlsby Adapter.
 * **Houlsby Adapter**: "Parameter-Efficient Transfer Learning for NLP". ICML(2019) [[PDF]](https://arxiv.org/abs/1902.00751): propose the method of freezing BERT parameters, only fine-tuning adapter layers, which generally preserves the BERT performance on GLUE.
 * **AdapterFusion**: "AdapterFusion: Non-Destructive Task Composition for Transfer Learning". EACL(2021) [[PDF]](https://arxiv.org/pdf/2005.00247): fine-tuning Adapter layers on difference tasks. Then fuse the adapter layers together for better performance on a target task.
