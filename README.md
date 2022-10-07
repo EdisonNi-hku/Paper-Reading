@@ -5,10 +5,10 @@ Paper reading list in natural language processing (NLP), with special emphasis o
     - [Scientific Claim Verification](#scientific-claim-verification)
     - [Fact-check of Other domain](#fact-check-of-othergeneral-domains)
     - [Checkworthiness](#checkworthinessclaim-detection)
-- [Transfer Learning and Multi-task Learning](#transfer-learning-and-MTL)
+- [Transfer Learning and MTL](#transfer-learning-and-mtl)
     - [Domain Adaptation](#domain-adaptation)
-    - [Adapter Based Models](#adapter-based-models)
-    - [Other models](#other-models)
+    - [Modular & Sparse Fine-tuning](#modular-and-sparse-fine-tuning)
+    - [MTL models](#mtl-models)
     - [MTL Analysis](#mtl-analysis)
 - [NLP in Finance](#nlp-in-finance)
     - [Financial NLP Models](#financial-nlp-models)
@@ -24,6 +24,7 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 
 
 ## Claim Verification
+* **Survey2022**: "A Survey on Automated Fact-Checking" (Guo et al., 2022 TACL) [[PDF]](https://aclanthology.org/2022.tacl-1.11.pdf)
 
 ### Scientific Claim Verification
 * **ClaimGenBART**: "Generating Scientific Claims for Zero-Shot Scientific Fact Checking" (Wright et al., 2022 ACL) [[PDF]](https://arxiv.org/pdf/2203.12990.pdf)
@@ -45,17 +46,18 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 
 
 ### Checkworthiness/Claim Detection
+* **NewsClaims**: "A New Benchmark for Claim Detection from News with Attribute Knowledge". (Reddy et al., 2021) [[PDF]](https://arxiv.org/pdf/2112.08544.pdf): define four subtasks for claim detection: claimer, claim w.r.t. topics, claim object, and claimer's stance.
 * **Covid Infodemic**: "Fighting the COVID-19 Infodemic: Modeling the Perspective of Journalists, Fact-Checkers, Social Media Platforms, Policy Makers, and the Society" EMNLP.Findings(Alam et al., 2021) [[PDF]](https://aclanthology.org/2021.findings-emnlp.56.pdf): three annotators per tweet. Resolve cases of disgreement in a consolidation discusion. Annotation instruction provided. The annotators are required to annotate 7 questions regarding a tweet. The questions help annotators to think more thoroughly, and provide comprehensive annotation.
 * **Covid Infodemic Annotation Platform**: "Fighting the COVID-19 Infodemic in Social Media:A Holistic Perspective and a Call to Arms". AAAI(Alam et al., 2021) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/18114/17917): crowd-sourcing annotation platform based on MicroMappers.
 * **ClaimBuster**: "A Benchmark Dataset of Check-Worthy Factual Claims" (Arslan, Hassan et al., 2020 AAAI) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/7346/7200): Also on the domain of presidiential debates. Compared with previous work, it reduced bias, and improved time-period of data. Similar transcripts processing. Use 40 labeled sentences to train annotators, as well as on-site training workshops. Use screening sentences to detect labeling quality. Monetary rewards and score rank to encourage better annotation.
 * **Judicial Decisions**: "Automated fact-value distinction in court opinions" (Cao et al., 2020) [[PDF]](https://link.springer.com/epdf/10.1007/s10657-020-09645-7?author_access_token=0lrxR5amL26ii9rbxOyRRve4RwlQNchNByi7wbcMAY4Rn4AGeJ9qqiUyLFGlSyn90_9MSB1ZXV1_BuuMOQ4sUXyeLq83OpD7B678nRCUDq6T2yW5EWuYBLhb4CC82O6D5dt5Bflo8nVd86wC0_EaFA%3D%3D): classification over fact statements(fact about the case) & value statements(principles applicable to the facts). Fact/opinion classification in law domain is different from other domain. Data was collected by parsing, using labels in the section headers.
 * **CheckThat!2020**: "Overview of CheckThat! 2020: Automatic Identification and Verification of Claims in Social Media" (Barrón-Cedeño et al., 2020 CLEF) [[PDF]](https://arxiv.org/pdf/2007.07997.pdf): claim verification pipeline in twitter. check-worthiness -> verified claim retrieval -> supporting evidence retrieval -> claim verification. Check-worthiness data collection: define 5 questions about check-worthiness. If the answers are all possitive th tweet is annotated to worth-checking. 2-5 annotators independently, then discuss disagreement.
 * **CheckThat!2019**: "Overview of the CLEF-2019 CheckThat! Lab: Automatic Identification and Verification of Claims. Task 1: Check-Worthiness" (Atanasova, Nakov et al., 2019 CLEF) [[PDF]](http://ceur-ws.org/Vol-2380/paper_269.pdf): different from ClaimBuster, this work is based on annotations by a fact-checking organization: mark those claims whose factuality was challenged by the fact-checkers.
-* **Presidential Debates**: "Detecting Check-worthy Factual Claims in
-Presidential Debates" (Hassan et al., 2015 CIKM) [[PDF]](https://dl.acm.org/doi/10.1145/2806416.2806652): whether a sentence is "non-factual", "unimportant factual", and "check-worthy factual". Data collection process: debate transcripts -> filter sentences from president candidates -> discard short sentences -> Use a data collection website to annotate -> 140 annotators -> using screening sentences to select high-quality annotators.
+* **Presidential Debates**: "Detecting Check-worthy Factual Claims in Presidential Debates" (Hassan et al., 2015 CIKM) [[PDF]](https://dl.acm.org/doi/10.1145/2806416.2806652): whether a sentence is "non-factual", "unimportant factual", and "check-worthy factual". Data collection process: debate transcripts -> filter sentences from president candidates -> discard short sentences -> Use a data collection website to annotate -> 140 annotators -> using screening sentences to select high-quality annotators.
 * **Annotation Schema**: "Developing an Annotation Schema and Benchmark for Consistent Automated Claim Detection" (Konstantinnovskiy et al., 2018) [[PDF]](https://arxiv.org/pdf/1809.08193.pdf): labels like worthy/not worthy are subjective. This work avoids judgement of "importance". They used prodigy as annotation platform.
 
 ### Approaches for Claim Detection
+* **MTL4Check-Worthness**: "It Takes Nine to Smell a Rat: Neural Multi-Task Learning for Check-Worthiness Prediction". (Vasileva et al., RANLP 2019) [[PDF]](https://aclanthology.org/R19-1141.pdf)
 * **Context**: "A Context-Aware Approach for Detecting Worth-Checking Claims in Political Debates" (Gencheva&Nakov et al., 2017) [[PDF]](https://www.acl-bg.org/proceedings/2017/RANLP%202017/pdf/RANLP037.pdf): Feature engineering on content(sentiment, named entity, linguistic features e.t.c.), context(position, meta data, segment size e.t.c.), and their mixture(topic, discourse, contradiction e.t.c.). Both contextual and sentential features are important. Evaluated on ClaimRank.
 * **Weak Supervision**: "Neural check-worthiness ranking with weak supervision Finding sentences for fact-checking" (Casper et al., 2019 WWW) [[PDF]](https://curis.ku.dk/portal/files/223251765/p994_hansen.pdf): use ClaimBuster API add weakly-supervised data. Evaluated on CLEF 2018 and ClaimRank.
 
@@ -74,31 +76,45 @@ Presidential Debates" (Hassan et al., 2015 CIKM) [[PDF]](https://dl.acm.org/doi/
 * **Data Programming**: "Creating Large Training Sets, Quickly" (Ratner et al., 2016 NIPS) [[PDF]](https://proceedings.neurips.cc/paper/2016/file/6709e8d64a5f47269ed5cea9f625f7ab-Paper.pdf): engineer a number of labeling functions, train a classifier on that, use that classifier to label large amounts of unsupervised data, train a new classifier on that data.
 
 ## Transfer Learning and MTL
+
+### Transfer Learning
+* **Head2toe probing**: "Head2Toe: Utilizing Intermediate Representations for Better Transfer Learning". Evci et al., ICML(2022) [[PDF]](https://arxiv.org/pdf/2201.03529.pdf): FINETUNING exposes existing features buried deep in the net for use by the classifier. Under this hypothesis, features needed for transfer are already present in the pretrained network and might be identified directly without fine-tuning the backbone itself.
+* **Parameter Space Factorization**: "Parameter Space Factorization for Zero-Shot Learning across Tasks and Languages" (Ponti et al., 2021 TACL) [[PDF]](https://arxiv.org/pdf/2001.11453.pdf): disentangle task representation with language representation using Bayesian Deep Learning. Another idea of hypernetworks.
+* **T5**: "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer". JMLR(2019) [[PDF]](https://arxiv.org/abs/1910.10683): the text-to-text framework allows us to directly apply the same model, objective, training procedure, and decoding process to every task we consider. C4 corpus is so large that the baseline go through no repeating data during training. 1) encoder-decoder models require only half of FLOPs required by decoder-only model with same size; encoder-decoder > enc-dec shared > language model; Denoising > BERT-style > LM(auto-regressive) > deshuffling; Corrupted length 3 > others. 2) comparison between pre-trained datasets: in-domain, multi-domain helps; repeat data <= large data without repeating. 3) Partial fine-tuning: adapter size corresponding to task size; gradual unfreeze not works. 4) MTL: temperature-based method is good. 5) gap between MTL and pre-train-then-fine-tune: MT pre-training + finetuning comparable to pre-training + finetuning; Leave-one-out pre-training is slightly worse. 6) scaling: training steps vs model size vs ensemble: no clear winner.
+
 ### Domain Adaptation
 * **DCCL**: "Domain Confused Contrastive Learning for Unsupervised Domain Adaptation". (Long et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.217.pdf): convert samples from different domains to "domain puzzles"(domain-confused sentences), and thus produce domain invariant representations. Methodology: learning domain classification with adversarial training. The learned adversarial attack is the "domain puzzle converter". Then use contrastive learning to push representation of domain puzzles and their original sentence closer. Only in-domain negative sampling is allowed.
+* **Source-free**: "A Comparison of Strategies for Source-Free Domain Adaptation". (Su et al., 2022 ACL) [[PDF]](https://aclanthology.org/2022.acl-long.572.pdf)
 * **Cross-domain Knowledge Distillation**: "Matching Distributions between Model and Data: Cross-domain Knowledge Distillation for Unsupervised Domain Adaptation". ACL(2021) [[PDF]](https://aclanthology.org/2021.acl-long.421.pdf)
 * **UDALM**: "UDALM: Unsupervised Domain Adaptation through Language Modeling". (Karouzos et al., 2021 NAACL) [[PDF]](https://arxiv.org/abs/2104.07078): fine tuning on source domain labeled data while training a target domain MLM auxiliary task.
 * **Domain Cluster**: "Unsupervised Domain Clusters in Pretrained Language Models" (Aharoni&Goldberg, 2020 ACL) [[PDF]](https://aclanthology.org/2020.acl-main.692.pdf)
 * **Adversarial BERT**: "Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis" ACL(2020) [[PDF]](https://aclanthology.org/2020.acl-main.370/): injecting target domain & domain knowledge through post-training, then apply domain-adversarial learning.
 * **Domain Classification**: "Domain Adaptation with BERT-based Domain Classification and Data Selection". EMNLP(2019) [[PDF]](https://aclanthology.org/2020.acl-main.370/): use curriculum learning, defaults: only selects part of source domain data & need labeled target domain development set.
 
-### Adapter Based Models
-* **DomainHierachy**: "Efficient Hierarchical Domain Adaptation
-for Pretrained Language Models" (Chronopoulou et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.96.pdf)
+### Modular and Sparse Fine-tuning
+* **LT-SFT**: "Composable Sparse Fine-Tuning for Cross-Lingual Transfer" (Ansell et al., 2022 ACL) [[PDF]](https://aclanthology.org/2022.acl-long.125.pdf): Sparse fine-tuning to disentangle languages from task objectives. Analyze the stability of hyperparameters.
+* **DomainHierachy**: "Efficient Hierarchical Domain Adaptation for Pretrained Language Models" (Chronopoulou et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.96.pdf)
+* **MAD-G**: "Multilingual Adapter Generation for Efficient Cross-Lingual Transfer" (Ansell el al., 2021 EMNLP.findings) [[PDF]](https://aclanthology.org/2021.findings-emnlp.410.pdf): use hypernetworks to generate (unseen)language adapters.
 * **Hyperformer**: "Parameter-efficient Multi-task Fine-tuning for Transformers via Shared Hypernetworks". ACL(2021) [[PDF]](https://arxiv.org/pdf/2106.04489.pdf): leveraging hyper-network and task embedding for positive knowledge transfer between different tasks. Model architecture based on Houlsby Adapter.
 * **Houlsby Adapter**: "Parameter-Efficient Transfer Learning for NLP". ICML(2019) [[PDF]](https://arxiv.org/abs/1902.00751): propose the method of freezing BERT parameters, only fine-tuning adapter layers, which generally preserves the BERT performance on GLUE.
 * **AdapterFusion**: "AdapterFusion: Non-Destructive Task Composition for Transfer Learning". EACL(2021) [[PDF]](https://arxiv.org/pdf/2005.00247): fine-tuning Adapter layers on difference tasks. Then fuse the adapter layers together for better performance on a target task.
 * **AdapterHub**: "AdapterHub: A Framework for Adapting Transformers". EMNLP(2020) [[PDF]](https://arxiv.org/abs/2007.07779)
 * **MAD-X**: "MAD-X: An Adapter-Based Framework for Multi-Task Cross-Lingual Transfer". EMNLP(Pfeiffer et al., 2020): Multi-lingual transfer by adapters.
 
-### Other Models
+### MTL Models
+#### Large Scale Aggregation
 * **ExT5**: "ExT5: Towards Extreme Multi-Task Scaling for Transfer Learning". ICLR(2022) [[PDF]](https://arxiv.org/abs/2111.10952)
-* **FLAN**: "Finetuned Language Models are Zero-Shot Learners". 2021 [[PDF]](https://arxiv.org/abs/2109.01652)
+* **T0**: "MULTITASK PROMPTED TRAINING ENABLES ZERO-SHOT TASK GENERALIZATION". ICLR(2022) [[PDF]](https://arxiv.org/pdf/2110.08207.pdf): natural language prompts help MTL. Similar to FLAN and ExT5, model/data available. Only report zero-shots results.
+* **MetaICL**: "Learning to Learn In Context". (Min et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.201/): a training method for in-context learning, with which in-context learning can beat other zero-shot learners. 
+* **FLAN**: "Finetuned Language Models are Zero-Shot Learners". Wei et al., 2021 [[PDF]](https://arxiv.org/abs/2109.01652)
 * **MUPPET**: "Muppet: Massive Multi-task Representations with Pre-Finetuning". EMNLP(2021) [[PDF]](https://aclanthology.org/2021.emnlp-main.468/)
-* **T5**: "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer". JMLR(2019) [[PDF]](https://arxiv.org/abs/1910.10683): the text-to-text framework allows us to directly apply the same model, objective, training procedure, and decoding process to every task we consider.
 * **MT-DNN**: "Multi-Task Deep Neural Networks for Natural Language Understanding". ACL(2019) [[PDF]](https://arxiv.org/abs/1901.11504): a setup at a scale of around 30 tasks and up to 440M parameters. 
+
+#### Architectures
+* **Modular Skills**: "Combining Modular Skills in Multitask Learning". Ponti el al., 2022 [[PDF]](https://arxiv.org/pdf/2202.13914.pdf): disentangle skills in multi-task learning.
 * **PALs**: "BERT and PALs: Projected Attention Layers for Efficient Adaptation in Multi-Task Learning". ICML(2019) [[PDF]](http://proceedings.mlr.press/v97/stickland19a.html): MTL systems with shared BERT and task specific adapter layers, adapter layers include Houlsby Adapter and Parallel Attention Layers.
 * **Task Hierachy**: "A Joint Many-Task Model: Growing a Neural Network for Multiple NLP Tasks". EMNLP(2017) [[PDF]](https://arxiv.org/abs/1611.01587): layers of tasks: POS -> Chunking -> Dependency parsing -> Semantic relatedness -> Entailment: input of each layer consists of label embeddings of all the previous layers and the hidden state of the previous layer.
+
 ### MTL Analysis
 * **MetaWeighting**: "MetaWeighting: Learning to Weight Tasks in Multi-Task Learning" ACL Findings(2022) [[PDF]](https://aclanthology.org/2022.findings-acl.271/)
 * **MTL v.s. IFT**: "When to Use Multi-Task Learning vs Intermediate Fine-Tuning for Pre-Trained Encoder Transfer Learning" ACL(2022) [[PDF]](https://arxiv.org/abs/2205.08124)
@@ -106,11 +122,11 @@ for Pretrained Language Models" (Chronopoulou et al., 2022 NAACL) [[PDF]](https:
 * **Non-target Head**: "What's in Your Head? Emergent Behaviour in Multi-Task Transformer Models". EMNLP(2021) [[PDF]](https://arxiv.org/abs/2104.06129)
 * **Ranking Transfer Languages**: "Ranking Transfer Languages with Pragmatically-Motivated Features for Multilingual Sentiment Analysis". EACL(2021) [[PDF]](https://arxiv.org/abs/2006.09336)
 * **UnifiedQA**: "UNIFIEDQA: Crossing format boundaries with a single QA system". EMNLP-Findings(2020) [[PDF]](https://aclanthology.org/2020.findings-emnlp.171)
-* **Task Embeddings**: "Exploring and predicting transferability
-across NLP tasks". EMNLP(2020) [[PDF]](https://aclanthology.org/2020.emnlp-main.635)
+* **Task Embeddings**: "Exploring and predicting transferability across NLP tasks". EMNLP(2020) [[PDF]](https://aclanthology.org/2020.emnlp-main.635)
+* **Overview**: "An Overview of Multi-Task Learning in Deep Neural Networks". (Ruder, 2017) [[PDF]](https://arxiv.org/pdf/1706.05098v1.pdf)
 
 ### MTL Gradients
-* **Gradient Vaccine**: "Investigating and Improving Multi-task Optimization in Massively Multilingual Models" ICLR(2021) [[PDF]](https://arxiv.org/abs/2010.05874)
+* **Gradient Vaccine**: "Investigating and Improving Multi-task Optimization in Massively Multilingual Models" Wang et al., ICLR(2021) [[PDF]](https://arxiv.org/abs/2010.05874)
 * **Impartial MTL**: "Towards Impartial Multi-task Learning" ICLR(2021) [[PDF]](https://openreview.net/forum?id=IMPnRXEWpvr)
 * **Pick a Sign**: "Just Pick a Sign: Optimizing Deep Multitask Models
 with Gradient Sign Dropout" NeurIPS(2020) [[PDF]](https://arxiv.org/pdf/2010.06808.pdf)
@@ -195,6 +211,10 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 * **GraphCodeBERT**: "GraphCodeBERT: Pre-training Code Representations with Data Flow". ICLR(2021) [[PDF]](https://arxiv.org/abs/2009.08366): leverage the power of code structure(data flow). Some variables are not named after naming convention, therefore, data flow provides semantic information of the variables. Two new pre-training objectives: edge prediction and node alignment.
 * **CodeXGLUE**: "CodeXGLUE: A Machine Learning Benchmark Dataset for Code Understanding and Generation". [[PDF]](https://arxiv.org/abs/2102.04664): contains a wide range of code-code, code-text, text-code, and text-text tasks. Three baselines: CodeBERT, CodeBERT + Decoder, CodeGPT.
 * **CodeBERT**: "CodeBERT: A Pre-Trained Model for Programming and Natural Languages". EMNLP-Findings(2020) [[PDF]](https://arxiv.org/abs/2002.08155): treat code and natural language as multi-modal data. Pre-training CodeBERT using two objectives: Masked Language Modeling(MLM) and Replaced Token Detection(RTD).
+
+## Architecture
+* **Transformer-XL**: "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context". (Dai et al., ACL 2019)[[PDF]](https://aclanthology.org/P19-1285.pdf).
+* **LFHC-RPE**: "Explore Better Relative Position Embeddings from Encoding Perspective for Transformer Models". (Qu et al., EMNLP 2021) [[PDF]](https://aclanthology.org/2021.emnlp-main.237.pdf).
 
 ## Data-to-text Generation
 * **PlanGen**: "Plan-then-Generate: Controlled Data-to-Text Generation via Planning". EMNLP(2021) [[PDF]](https://arxiv.org/abs/2108.13740)
