@@ -27,6 +27,7 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 * **Survey2022**: "A Survey on Automated Fact-Checking" (Guo et al., 2022 TACL) [[PDF]](https://aclanthology.org/2022.tacl-1.11.pdf)
 
 ### Scientific Claim Verification
+* **SciFact-Open**: "Towards open-domain scientific claim verification" (Wadden et al., 2022) [[PDF]](https://arxiv.org/pdf/2210.13777.pdf)
 * **ClaimGenBART**: "Generating Scientific Claims for Zero-Shot Scientific Fact Checking" (Wright et al., 2022 ACL) [[PDF]](https://arxiv.org/pdf/2203.12990.pdf)
 * **MultiVers**: "Improving scientific claim verification with weak supervision and full-document context" (Wadden et al., 2022 NAACL.findings) [[PDF]](https://arxiv.org/pdf/2112.01640.pdf): provided a nice summarization of background of SCV. Use Longformer to contextualize claim + abstarct sequence. Since rationale prediction is not necessary when predicting veracity, weakly supervised data can be utilized.
 * **ARSJoint**: "Abstract, Rationale, Stance: A Joint Model for Scientific Claim Verification" (Zhang et al., 2021 EMNLP) [[PDF]](https://aclanthology.org/2021.emnlp-main.290.pdf): Another joint approach dealing with error propagation in pipeline. Similar to ParagraphJoint, contextualize the entire abstract with claim. Use hierachical attention to compute sentence attentions/abstract attention. Information sharing/MTL joint training enabled by complicated prediction headers.
@@ -45,7 +46,8 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 " (Ferreira&Vlachos, 2016 NAACL) [[PDF]](https://aclanthology.org/N16-1138.pdf): claim verification on news article domain.
 
 
-### Checkworthiness/Claim Detection
+### Claim Detection
+* **EnvClaim**: "A DATASET FOR DETECTING REAL-WORLD ENVIRONMENTAL CLAIMS" (Stammbach et al., 2022) [[PDF]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4207369)
 * **NewsClaims**: "A New Benchmark for Claim Detection from News with Attribute Knowledge". (Reddy et al., 2021) [[PDF]](https://arxiv.org/pdf/2112.08544.pdf): define four subtasks for claim detection: claimer, claim w.r.t. topics, claim object, and claimer's stance.
 * **Covid Infodemic**: "Fighting the COVID-19 Infodemic: Modeling the Perspective of Journalists, Fact-Checkers, Social Media Platforms, Policy Makers, and the Society" EMNLP.Findings(Alam et al., 2021) [[PDF]](https://aclanthology.org/2021.findings-emnlp.56.pdf): three annotators per tweet. Resolve cases of disgreement in a consolidation discusion. Annotation instruction provided. The annotators are required to annotate 7 questions regarding a tweet. The questions help annotators to think more thoroughly, and provide comprehensive annotation.
 * **Covid Infodemic Annotation Platform**: "Fighting the COVID-19 Infodemic in Social Media:A Holistic Perspective and a Call to Arms". AAAI(Alam et al., 2021) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/18114/17917): crowd-sourcing annotation platform based on MicroMappers.
@@ -103,6 +105,8 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 
 ### MTL Models
 #### Large Scale Aggregation
+* **Flan-Scaling**: "Scaling Instruction-Finetuned Language Models". (Chung et al., 2022) [[PDF]](https://arxiv.org/pdf/2210.11416.pdf)
+* **SUP-NATINST**: "SUPER-NATURALINSTRUCTIONS: Generalization via Declarative Instructions on 1600+ NLP Tasks". (Wang et al., 2022) [[PDF]](https://arxiv.org/pdf/2204.07705.pdf)
 * **ExT5**: "ExT5: Towards Extreme Multi-Task Scaling for Transfer Learning". ICLR(2022) [[PDF]](https://arxiv.org/abs/2111.10952)
 * **T0**: "MULTITASK PROMPTED TRAINING ENABLES ZERO-SHOT TASK GENERALIZATION". ICLR(2022) [[PDF]](https://arxiv.org/pdf/2110.08207.pdf): natural language prompts help MTL. Similar to FLAN and ExT5, model/data available. Only report zero-shots results.
 * **MetaICL**: "Learning to Learn In Context". (Min et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.201/): a training method for in-context learning, with which in-context learning can beat other zero-shot learners. 
