@@ -120,9 +120,12 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 * **Task Hierachy**: "A Joint Many-Task Model: Growing a Neural Network for Multiple NLP Tasks". EMNLP(2017) [[PDF]](https://arxiv.org/abs/1611.01587): layers of tasks: POS -> Chunking -> Dependency parsing -> Semantic relatedness -> Entailment: input of each layer consists of label embeddings of all the previous layers and the hidden state of the previous layer.
 
 ### MTL Analysis
+* **T2T Conflict**: "Do Text-to-Text Multi-Task Learners Suffer from Task Conflict?" (Mueller et al., 2022 EMNLP.Findings) [[PDF]](https://www.cs.jhu.edu/~mdredze/publications/2022_emnlp_text-to-text.pdf)
+* **MT transferability**: "Exploring the Role of Task Transferability in Large-Scale Multi-Task Learning" (Padmakumar et al., 2022 ACL) [[PDF]](https://aclanthology.org/2022.naacl-main.183.pdf)
 * **MetaWeighting**: "MetaWeighting: Learning to Weight Tasks in Multi-Task Learning" ACL Findings(2022) [[PDF]](https://aclanthology.org/2022.findings-acl.271/)
 * **MTL v.s. IFT**: "When to Use Multi-Task Learning vs Intermediate Fine-Tuning for Pre-Trained Encoder Transfer Learning" ACL(2022) [[PDF]](https://arxiv.org/abs/2205.08124)
 * **Task Gradients**: "Efficiently Identifying Task Groupings for Multi-Task Learning". NeurIPS spotlight(2021) [[PDF]](https://arxiv.org/abs/2109.04617)
+* **Auxiliary Data Selection**: "Efficient Multi-Task Auxiliary Learning: Selecting Auxiliary Data by Feature Similarity". (Kung et al., 2021 EMNLP)
 * **Non-target Head**: "What's in Your Head? Emergent Behaviour in Multi-Task Transformer Models". EMNLP(2021) [[PDF]](https://arxiv.org/abs/2104.06129)
 * **Ranking Transfer Languages**: "Ranking Transfer Languages with Pragmatically-Motivated Features for Multilingual Sentiment Analysis". EACL(2021) [[PDF]](https://arxiv.org/abs/2006.09336)
 * **UnifiedQA**: "UNIFIEDQA: Crossing format boundaries with a single QA system". EMNLP-Findings(2020) [[PDF]](https://aclanthology.org/2020.findings-emnlp.171)
@@ -199,6 +202,7 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 
 
 ## Transformers Interpretation
+* **Fine-tuning**: "A Closer Look at How Fine-tuning Changes BERT". (Zhou et al., 2022 ACL) [[PDF]](https://aclanthology.org/2022.acl-long.75.pdf)
 * **Tutorial**: "Fine-grained Interpretation and Causation Analysis in Deep NLP Models". NAACL(2021) [[PDF]](https://arxiv.org/pdf/2105.08039.pdf)
 * **BERT**: "What Does BERT Look At? An Analysis of BERT's Attention". ACL(2019) [[PDF]](https://aclanthology.org/W19-4828/):  An Analysis of BERT's Attention. BERT attention analysis [toolkit](https://github.com/clarkkev/attention-analysis)
 
