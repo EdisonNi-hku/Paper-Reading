@@ -45,16 +45,24 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 * **Emergent**: "Emergent: a novel data-set for stance classification
 " (Ferreira&Vlachos, 2016 NAACL) [[PDF]](https://aclanthology.org/N16-1138.pdf): claim verification on news article domain.
 
-
-### Claim Detection
+infodeinfode
+### Claim Detection & Argument Mining
+* **Topic Ontologies**: "Topic Ontologies for Arguments" (Ajjour et al., 2023) [[PDF]](https://arxiv.org/pdf/2301.09759.pdf)
+* **Concept Survey**: "Beyond facts - a survey and conceptualisation of claims in online discourse analysis" (Boland et al., 2022) [[PDF]](https://content.iospress.com/download/semantic-web/sw212838?id=semantic-web%2Fsw212838)
 * **EnvClaim**: "A DATASET FOR DETECTING REAL-WORLD ENVIRONMENTAL CLAIMS" (Stammbach et al., 2022) [[PDF]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4207369)
+* **CheckThat2022**: "Overview of the CLEF-2022 CheckThat! Lab Task 1 on Identifying Relevant Claims in Tweets" (Nakov et al., 2022) [[PDF]](https://ceur-ws.org/Vol-3180/paper-28.pdf)
+* **DESYR**: "Definition and Syntactic Representation Based Claim Detection on the Web" (Sundriyal et al., 2021) [[PDF]](https://www.semanticscholar.org/paper/DESYR%3A-Definition-and-Syntactic-Representation-on-Sundriyal-Singh/469ecdbfd2603558ca6caf9d3521824cec7d0b09)
+* **Spurious Corr**: "Spurious Correlations in Cross-Topic Argument Mining" (Jakobsen et al., 2021 *SEM) [[PDF]](https://aclanthology.org/2021.starsem-1.25/)
+* **LESA**: "Linguistic Encapsulation and Semantic Amalgamation Based Generalised Claim Detection from Online Content" (Gupta et al., 2021 EACK) [[PDF]](https://arxiv.org/pdf/2101.11891.pdf) Annotation Guidelines [[PDF]](https://github.com/LCS2-IIITD/LESA-EACL-2021/blob/main/LESA-EACL-2021-Appendix.pdf)
 * **NewsClaims**: "A New Benchmark for Claim Detection from News with Attribute Knowledge". (Reddy et al., 2021) [[PDF]](https://arxiv.org/pdf/2112.08544.pdf): define four subtasks for claim detection: claimer, claim w.r.t. topics, claim object, and claimer's stance.
+* **CheckThat!2021**: "Overview of the CLEF-2021 CheckThat! Lab Task 1 on Check-Worthiness Estimation in Tweets and Political Debates". (Shaar et al., 2021 CLEF) [[PDF]](https://ceur-ws.org/Vol-2936/paper-28.pdf)
 * **Covid Infodemic**: "Fighting the COVID-19 Infodemic: Modeling the Perspective of Journalists, Fact-Checkers, Social Media Platforms, Policy Makers, and the Society" EMNLP.Findings(Alam et al., 2021) [[PDF]](https://aclanthology.org/2021.findings-emnlp.56.pdf): three annotators per tweet. Resolve cases of disgreement in a consolidation discusion. Annotation instruction provided. The annotators are required to annotate 7 questions regarding a tweet. The questions help annotators to think more thoroughly, and provide comprehensive annotation.
 * **Covid Infodemic Annotation Platform**: "Fighting the COVID-19 Infodemic in Social Media:A Holistic Perspective and a Call to Arms". AAAI(Alam et al., 2021) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/18114/17917): crowd-sourcing annotation platform based on MicroMappers.
 * **ClaimBuster**: "A Benchmark Dataset of Check-Worthy Factual Claims" (Arslan, Hassan et al., 2020 AAAI) [[PDF]](https://ojs.aaai.org/index.php/ICWSM/article/view/7346/7200): Also on the domain of presidiential debates. Compared with previous work, it reduced bias, and improved time-period of data. Similar transcripts processing. Use 40 labeled sentences to train annotators, as well as on-site training workshops. Use screening sentences to detect labeling quality. Monetary rewards and score rank to encourage better annotation.
 * **Judicial Decisions**: "Automated fact-value distinction in court opinions" (Cao et al., 2020) [[PDF]](https://link.springer.com/epdf/10.1007/s10657-020-09645-7?author_access_token=0lrxR5amL26ii9rbxOyRRve4RwlQNchNByi7wbcMAY4Rn4AGeJ9qqiUyLFGlSyn90_9MSB1ZXV1_BuuMOQ4sUXyeLq83OpD7B678nRCUDq6T2yW5EWuYBLhb4CC82O6D5dt5Bflo8nVd86wC0_EaFA%3D%3D): classification over fact statements(fact about the case) & value statements(principles applicable to the facts). Fact/opinion classification in law domain is different from other domain. Data was collected by parsing, using labels in the section headers.
 * **CheckThat!2020**: "Overview of CheckThat! 2020: Automatic Identification and Verification of Claims in Social Media" (Barrón-Cedeño et al., 2020 CLEF) [[PDF]](https://arxiv.org/pdf/2007.07997.pdf): claim verification pipeline in twitter. check-worthiness -> verified claim retrieval -> supporting evidence retrieval -> claim verification. Check-worthiness data collection: define 5 questions about check-worthiness. If the answers are all possitive th tweet is annotated to worth-checking. 2-5 annotators independently, then discuss disagreement.
 * **CheckThat!2019**: "Overview of the CLEF-2019 CheckThat! Lab: Automatic Identification and Verification of Claims. Task 1: Check-Worthiness" (Atanasova, Nakov et al., 2019 CLEF) [[PDF]](http://ceur-ws.org/Vol-2380/paper_269.pdf): different from ClaimBuster, this work is based on annotations by a fact-checking organization: mark those claims whose factuality was challenged by the fact-checkers.
+* **Definition**: "What is the Essence of a Claim? Cross-Domain Claim Identification" (Daxenberger et al., 2017 EMNLP) [[PDF]](https://aclanthology.org/D17-1218.pdf)
 * **Presidential Debates**: "Detecting Check-worthy Factual Claims in Presidential Debates" (Hassan et al., 2015 CIKM) [[PDF]](https://dl.acm.org/doi/10.1145/2806416.2806652): whether a sentence is "non-factual", "unimportant factual", and "check-worthy factual". Data collection process: debate transcripts -> filter sentences from president candidates -> discard short sentences -> Use a data collection website to annotate -> 140 annotators -> using screening sentences to select high-quality annotators.
 * **Annotation Schema**: "Developing an Annotation Schema and Benchmark for Consistent Automated Claim Detection" (Konstantinnovskiy et al., 2018) [[PDF]](https://arxiv.org/pdf/1809.08193.pdf): labels like worthy/not worthy are subjective. This work avoids judgement of "importance". They used prodigy as annotation platform.
 
@@ -229,3 +237,11 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 
 ## Curriculum Learning
 * **CL4NLU**: "Curriculum Learning for Natural Language Understanding". ACL(2020) [[PDF]](https://aclanthology.org/2020.acl-main.542/)
+
+## Large Language Models Utilities
+* **Distill-ICL**: "In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models". (Huang et al., 2022)[[PDF]](https://arxiv.org/pdf/2212.10670.pdf)
+* **DataAug4DialogueUnderstanding**: "Weakly Supervised Data Augmentation Through Prompting for Dialogue Understanding". (Chen et al., 2022 NeurIPS workshop)[[PDF]](https://arxiv.org/pdf/2210.14169.pdf)
+
+
+## Spurious Correlation
+* **Stopwords**: "Analyzing Biases to Spurious Correlations in Text Classification Tasks". (Liusie et al., 2022 AACL)[[PDF]](https://aclanthology.org/2022.aacl-short.11.pdf)
