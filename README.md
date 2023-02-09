@@ -50,7 +50,7 @@ infodeinfode
 * **Topic Ontologies**: "Topic Ontologies for Arguments" (Ajjour et al., 2023) [[PDF]](https://arxiv.org/pdf/2301.09759.pdf)
 * **Concept Survey**: "Beyond facts - a survey and conceptualisation of claims in online discourse analysis" (Boland et al., 2022) [[PDF]](https://content.iospress.com/download/semantic-web/sw212838?id=semantic-web%2Fsw212838)
 * **EnvClaim**: "A DATASET FOR DETECTING REAL-WORLD ENVIRONMENTAL CLAIMS" (Stammbach et al., 2022) [[PDF]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4207369)
-* **CheckThat2022**: "Overview of the CLEF-2022 CheckThat! Lab Task 1 on Identifying Relevant Claims in Tweets" (Nakov et al., 2022) [[PDF]](https://ceur-ws.org/Vol-3180/paper-28.pdf)
+* **CheckThat!2022**: "Overview of the CLEF-2022 CheckThat! Lab Task 1 on Identifying Relevant Claims in Tweets" (Nakov et al., 2022) [[PDF]](https://ceur-ws.org/Vol-3180/paper-28.pdf)
 * **DESYR**: "Definition and Syntactic Representation Based Claim Detection on the Web" (Sundriyal et al., 2021) [[PDF]](https://www.semanticscholar.org/paper/DESYR%3A-Definition-and-Syntactic-Representation-on-Sundriyal-Singh/469ecdbfd2603558ca6caf9d3521824cec7d0b09)
 * **Spurious Corr**: "Spurious Correlations in Cross-Topic Argument Mining" (Jakobsen et al., 2021 *SEM) [[PDF]](https://aclanthology.org/2021.starsem-1.25/)
 * **LESA**: "Linguistic Encapsulation and Semantic Amalgamation Based Generalised Claim Detection from Online Content" (Gupta et al., 2021 EACK) [[PDF]](https://arxiv.org/pdf/2101.11891.pdf) Annotation Guidelines [[PDF]](https://github.com/LCS2-IIITD/LESA-EACL-2021/blob/main/LESA-EACL-2021-Appendix.pdf)
@@ -238,10 +238,18 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 ## Curriculum Learning
 * **CL4NLU**: "Curriculum Learning for Natural Language Understanding". ACL(2020) [[PDF]](https://aclanthology.org/2020.acl-main.542/)
 
-## Large Language Models Utilities
+## LLMs
+
+### Retrieval-augmented LLMs
+* **Atlas**: "Few-shot Learning with Retrieval Augmented Language Models" (Izacard et al., 2022) [[PDF]](https://arxiv.org/pdf/2208.03299.pdf)
+* **Retro**: "Improving language models by retrieving from trillions of tokens" (Borgeaud et al., 2021) [[PDF]](https://arxiv.org/pdf/2112.04426.pdf)
+* **REALM**: "Retrieval Augmented Language Model Pre-Training" (Guu et al., 2020) [[PDF]](https://proceedings.mlr.press/v119/guu20a.html)
+
+### Large Language Models Utilities
 * **Distill-ICL**: "In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models". (Huang et al., 2022)[[PDF]](https://arxiv.org/pdf/2212.10670.pdf)
 * **DataAug4DialogueUnderstanding**: "Weakly Supervised Data Augmentation Through Prompting for Dialogue Understanding". (Chen et al., 2022 NeurIPS workshop)[[PDF]](https://arxiv.org/pdf/2210.14169.pdf)
 
 
-## Spurious Correlation
+## Causal NLP
 * **Stopwords**: "Analyzing Biases to Spurious Correlations in Text Classification Tasks". (Liusie et al., 2022 AACL)[[PDF]](https://aclanthology.org/2022.aacl-short.11.pdf)
+* **UIF and conterfactual invariance**: "Informativeness and Invariance: Two Perspectives on Spurious Correlations in Natural Language". (Eisenstein et al., 2022 NAACL)[[PDF]](https://arxiv.org/pdf/2204.04487.pdf)
