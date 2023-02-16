@@ -37,17 +37,19 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 
 
 ### Fact-check of Other/General domains
+* **ComplexClaims**: "Generating Literal and Implied Subquestions to Fact-check Complex Claims" (Chen et al., 2022 EMNLP) [[PDF]](https://arxiv.org/pdf/2205.06938.pdf)
 * **KGAT**: "Fine-grained Fact Verification with Kernel Graph Attention Network" (Liu et al., 2020 ACL) [[PDF]](https://arxiv.org/pdf/1910.09796.pdf)
+* **HOVER**: "A Dataset for Many-Hop Fact Extraction And Claim Verification" (Jiang et al., 2020 EMNLP) [[PDF]](https://arxiv.org/pdf/2011.03088.pdf)
 * **GEAR**: "GEAR: Graph-based Evidence Aggregating and Reasoning for Fact Verification" (Zhou et al., 2019 ACL) [[PDF]](https://aclanthology.org/P19-1085.pdf)
 * **UKP Snopes**: "A richly annotated corpus for different tasks in automated factchecking" (Hanselowski et al., 2019 CoNLL)
 * **MultiFC**: "A Real-World Multi-Domain Dataset for Evidence-Based Fact Checking of Claims" (Augenstein et al., 2019 EMNLP) [[PDF]](https://aclanthology.org/D19-1475.pdf): multi-domain labeled claims crawled from fact-check websites. Evidences are retrieved from google search. Provided a summarization of previous datasets.
 * **FakeNewsNet**: "A Data Repository with News Content, Social Context and Spatiotemporal Information for Studying Fake News on Social Media" (Shu et al., 2018 AAAI) [[PDF]](https://arxiv.org/pdf/1809.01286.pdf): instead of verifying a news based on its content and external evidence, fake news detection relys on social, spacial, and temperal information.
-* **Emergent**: "Emergent: a novel data-set for stance classification
-" (Ferreira&Vlachos, 2016 NAACL) [[PDF]](https://aclanthology.org/N16-1138.pdf): claim verification on news article domain.
+* **Emergent**: "Emergent: a novel data-set for stance classification" (Ferreira&Vlachos, 2016 NAACL) [[PDF]](https://aclanthology.org/N16-1138.pdf): claim verification on news article domain.
 
 infodeinfode
 ### Claim Detection & Argument Mining
 * **Topic Ontologies**: "Topic Ontologies for Arguments" (Ajjour et al., 2023) [[PDF]](https://arxiv.org/pdf/2301.09759.pdf)
+* **Paraphrases**: "Modeling Information Change in Science Communication with Semantically Matched Paraphrases" (Wright et al., 2022 EMNLP) [[PDF]](https://arxiv.org/pdf/2210.13001.pdf)
 * **Concept Survey**: "Beyond facts - a survey and conceptualisation of claims in online discourse analysis" (Boland et al., 2022) [[PDF]](https://content.iospress.com/download/semantic-web/sw212838?id=semantic-web%2Fsw212838)
 * **EnvClaim**: "A DATASET FOR DETECTING REAL-WORLD ENVIRONMENTAL CLAIMS" (Stammbach et al., 2022) [[PDF]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4207369)
 * **CheckThat!2022**: "Overview of the CLEF-2022 CheckThat! Lab Task 1 on Identifying Relevant Claims in Tweets" (Nakov et al., 2022) [[PDF]](https://ceur-ws.org/Vol-3180/paper-28.pdf)
