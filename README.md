@@ -36,17 +36,21 @@ Paper reading list in natural language processing (NLP), with special emphasis o
 * **SciFact**: "Fact or Fiction: Verifying Scientific Claims" (Wadden et al., 2020 EMNLP) [[PDF]](https://aclanthology.org/2020.emnlp-main.609.pdf)
 
 
-### Fact-check of Other/General domains
+### Fact-check/Fake News Detection
+* **Fact-Saboteurs**: "A Taxonomy of Evidence Manipulation Attacks against Fact-Verification Systems" (Abdelnabi et al., 2022) [[PDF]](https://arxiv.org/abs/2209.03755)
+* **Synthetic Attacks**: "synthetic disinformation attacks on automated fact verification systems" (Du et al., 2022 AAAI) [[PDF]](https://arxiv.org/abs/2202.09381)
 * **ComplexClaims**: "Generating Literal and Implied Subquestions to Fact-check Complex Claims" (Chen et al., 2022 EMNLP) [[PDF]](https://arxiv.org/pdf/2205.06938.pdf)
+* **GET**: "Evidence-aware Fake News Detection with Graph Neural Networks" (Xu et al., 2022 TheWebConf) [[PDF]](https://arxiv.org/abs/2201.06885)
+* **LM-PPL**: "Towards Few-Shot Fact-Checking via Perplexity" (Lee et al., 2021 NAACL) [[PDF]](https://aclanthology.org/2021.naacl-main.158.pdf)
 * **KGAT**: "Fine-grained Fact Verification with Kernel Graph Attention Network" (Liu et al., 2020 ACL) [[PDF]](https://arxiv.org/pdf/1910.09796.pdf)
 * **HOVER**: "A Dataset for Many-Hop Fact Extraction And Claim Verification" (Jiang et al., 2020 EMNLP) [[PDF]](https://arxiv.org/pdf/2011.03088.pdf)
+* **Grover**: "Defending Against Neural Fake News" (Zellers et al., 2019 NeurIPS) [[PDF]](https://arxiv.org/abs/1905.12616)
 * **GEAR**: "GEAR: Graph-based Evidence Aggregating and Reasoning for Fact Verification" (Zhou et al., 2019 ACL) [[PDF]](https://aclanthology.org/P19-1085.pdf)
 * **UKP Snopes**: "A richly annotated corpus for different tasks in automated factchecking" (Hanselowski et al., 2019 CoNLL)
 * **MultiFC**: "A Real-World Multi-Domain Dataset for Evidence-Based Fact Checking of Claims" (Augenstein et al., 2019 EMNLP) [[PDF]](https://aclanthology.org/D19-1475.pdf): multi-domain labeled claims crawled from fact-check websites. Evidences are retrieved from google search. Provided a summarization of previous datasets.
 * **FakeNewsNet**: "A Data Repository with News Content, Social Context and Spatiotemporal Information for Studying Fake News on Social Media" (Shu et al., 2018 AAAI) [[PDF]](https://arxiv.org/pdf/1809.01286.pdf): instead of verifying a news based on its content and external evidence, fake news detection relys on social, spacial, and temperal information.
 * **Emergent**: "Emergent: a novel data-set for stance classification" (Ferreira&Vlachos, 2016 NAACL) [[PDF]](https://aclanthology.org/N16-1138.pdf): claim verification on news article domain.
 
-infodeinfode
 ### Claim Detection & Argument Mining
 * **Topic Ontologies**: "Topic Ontologies for Arguments" (Ajjour et al., 2023) [[PDF]](https://arxiv.org/pdf/2301.09759.pdf)
 * **Paraphrases**: "Modeling Information Change in Science Communication with Semantically Matched Paraphrases" (Wright et al., 2022 EMNLP) [[PDF]](https://arxiv.org/pdf/2210.13001.pdf)
@@ -104,6 +108,7 @@ infodeinfode
 * **Domain Classification**: "Domain Adaptation with BERT-based Domain Classification and Data Selection". EMNLP(2019) [[PDF]](https://aclanthology.org/2020.acl-main.370/): use curriculum learning, defaults: only selects part of source domain data & need labeled target domain development set.
 
 ### Modular and Sparse Fine-tuning
+* **T-Few**: "Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning" (Liu et al., 2022) [[PDF]](https://arxiv.org/abs/2205.05638)
 * **LT-SFT**: "Composable Sparse Fine-Tuning for Cross-Lingual Transfer" (Ansell et al., 2022 ACL) [[PDF]](https://aclanthology.org/2022.acl-long.125.pdf): Sparse fine-tuning to disentangle languages from task objectives. Analyze the stability of hyperparameters.
 * **DomainHierachy**: "Efficient Hierarchical Domain Adaptation for Pretrained Language Models" (Chronopoulou et al., 2022 NAACL) [[PDF]](https://aclanthology.org/2022.naacl-main.96.pdf)
 * **MAD-G**: "Multilingual Adapter Generation for Efficient Cross-Lingual Transfer" (Ansell el al., 2021 EMNLP.findings) [[PDF]](https://aclanthology.org/2021.findings-emnlp.410.pdf): use hypernetworks to generate (unseen)language adapters.
@@ -243,6 +248,9 @@ Numeral Attachment in Financial Tweets". 2020 [[PDF]](https://research.nii.ac.jp
 ## LLMs
 
 ### Retrieval-augmented LLMs
+* **In-Context Retrieval**: "In-Context Retrieval-Augmented Language Models" (Ori et al., 2023) [[PDF]](https://arxiv.org/abs/2302.00083)
+* **RePLUG**: "Retrieval-Augmented Black-Box Language Models" (Shi et al., 2023) [[PDF]](https://arxiv.org/abs/2301.12652)
+* **IRCoT**: "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions" (Trivedi et al., 2022) [[PDF]](https://arxiv.org/abs/2212.10509)
 * **Atlas**: "Few-shot Learning with Retrieval Augmented Language Models" (Izacard et al., 2022) [[PDF]](https://arxiv.org/pdf/2208.03299.pdf)
 * **Retro**: "Improving language models by retrieving from trillions of tokens" (Borgeaud et al., 2021) [[PDF]](https://arxiv.org/pdf/2112.04426.pdf)
 * **REALM**: "Retrieval Augmented Language Model Pre-Training" (Guu et al., 2020) [[PDF]](https://proceedings.mlr.press/v119/guu20a.html)
